@@ -1,0 +1,14 @@
+RewriteEngine on 
+
+RewriteCond %{HTTP_HOST} ^(www.)?f0502350.xsph.ru$ 
+
+RewriteCond %{REQUEST_URI} !^/public/ 
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+RewriteRule ^(.*)$ /public/$1 
+
+
+RewriteRule ^(/)?$ public/index.php [L]
